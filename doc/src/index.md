@@ -5,6 +5,26 @@
 
 Example on how to use the *Microsoft IoT Edge SDK*
 
+## More Information
+
+- [Azure IoT device SDK for C (Documentation)]( https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-device-sdk-c-intro )
+- [Microsoft Azure IoT SDKs and libraries for C (Git Repository)]( https://github.com/Azure/azure-iot-sdk-c )
+- [Microsoft Azure IoT Device SDK for C (API reference)]( https://azure.github.io/azure-iot-sdk-c/index.html )
+
+## Steps
+
+- [Create an IoT hub using the Azure portal]( https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal )
+    - [Create an Azure account]( https://azure.microsoft.com/en-us/ )
+    - [Create an IoT Hub]( https://portal.azure.com/#create/Microsoft.IotHub )
+        - Name: iotedgeexample
+        - Resource Group: examples
+        - Price and Tier: free 
+        - Location: West US
+        - Event Hub Compatible Name: iothub-ehub-iotedgeexa-366274-dc6d27cefc
+        - Event Hub Compatible Endpoint: Endpoint=sb://ihsuprodbyres019dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=C5h93KWLcrrnvxi41+7Ay8OlSFlCAdvCRdnLVDOTVp8=
+        -
+        
+
 ## How to compile
 
 ### Linux
