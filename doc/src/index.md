@@ -13,6 +13,8 @@ Example on how to use the *Microsoft IoT Edge SDK*
 
 ## Steps
 
+### Azure portal registration
+
 - [Create an IoT hub using the Azure portal]( https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal )
     - [Create an Azure account]( https://azure.microsoft.com/en-us/ )
     - [Create an IoT Hub]( https://portal.azure.com/#create/Microsoft.IotHub )
@@ -22,8 +24,37 @@ Example on how to use the *Microsoft IoT Edge SDK*
         - Location: West US
         - Event Hub Compatible Name: iothub-ehub-iotedgeexa-366274-dc6d27cefc
         - Event Hub Compatible Endpoint: Endpoint=sb://ihsuprodbyres019dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=C5h93KWLcrrnvxi41+7Ay8OlSFlCAdvCRdnLVDOTVp8=
-        -
-        
+        - Host name: iotedgeexample.azure-devices.net
+        - Connection String Primary Key: HostName=iotedgeexample.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=C5h93KWLcrrnvxi41+7Ay8OlSFlCAdvCRdnLVDOTVp8=
+    - To allow *bi-directional* communication with *Azure IoT Hub* it will be necessary to use the [Microsoft Azure IoT Protocol Gateway]( https://github.com/Azure/azure-iot-protocol-gateway )
+
+### Compiling Microsoft Iot Edge
+
+		- Clone the project and all submodules
+		- Init all submodules recursivelly. `git submodule update --init --recursive`
+    - Compile it. 
+
+``````sh
+mkdir cmake
+cd ./cmake
+
+# for release
+cmake ..
+
+# for debug with tests
+cmake -Drun_e2e_tests=ON -Drun_unittests=ON -DCMAKE_BUILD_TYPE=Debug ..
+``````
+    - The toolkit has several examples located at *azure-iot-sdk-c/iothub_client/samples*
+
+### Device Credentials
+
+    - Download and install the [Device Explorer]( https://github.com/Azure/azure-iot-sdk-csharp/releases )
+    - Inform the host name. Instructions to find the HostName can be found [here](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/doc/setup_iothub.md) 
+    - On the Management tab create a new device:
+        - Device name: iot_edge_device_example
+        - PrimaryKey: 5CiOHu2MJWVxHgPcue6dHaz91FF3410tnvzpUmjX4s4=
+        - SecondaryKey: drTuxzMdQNA9tsw0wQmfCLKKaLaCxfMH0kFqh2yzbmc=
+        - Device connection string: HostName=iotedgeexample.azure-devices.net;DeviceId=iot_edge_device_example;SharedAccessKey=5CiOHu2MJWVxHgPcue6dHaz91FF3410tnvzpUmjX4s4=
 
 ## How to compile
 
