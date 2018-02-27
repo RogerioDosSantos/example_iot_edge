@@ -30,11 +30,18 @@ Example on how to use the *Microsoft IoT Edge SDK*
 
 ### Compiling Microsoft Iot Edge
 
+    - Prepare the Linux Environment:
+``` sh
+sudo apt-get update
+sudo apt-get install -y git cmake build-essential curl libcurl4-openssl-dev libssl-dev uuid-dev pkg-config
+```
 		- Clone the project and all submodules
-		- Init all submodules recursivelly. `git submodule update --init --recursive`
+		- Init all submodules recursivelly. 
+``` sh
+git submodule update --init --recursive
+```
     - Compile it. 
-
-``````sh
+``` sh
 mkdir cmake
 cd ./cmake
 
@@ -43,7 +50,7 @@ cmake ..
 
 # for debug with tests
 cmake -Drun_e2e_tests=ON -Drun_unittests=ON -DCMAKE_BUILD_TYPE=Debug ..
-``````
+``` 
     - The toolkit has several examples located at *azure-iot-sdk-c/iothub_client/samples*
 
 ### Device Credentials
