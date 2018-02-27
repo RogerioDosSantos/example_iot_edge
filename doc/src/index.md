@@ -53,7 +53,7 @@ cmake -Drun_e2e_tests=ON -Drun_unittests=ON -DCMAKE_BUILD_TYPE=Debug ..
 ``` 
     - The toolkit has several examples located at *azure-iot-sdk-c/iothub_client/samples*
 
-### Device Credentials
+### Setting the Device Credentials
 
     - Download and install the [Device Explorer]( https://github.com/Azure/azure-iot-sdk-csharp/releases )
     - Inform the host name. Instructions to find the HostName can be found [here](https://github.com/Azure/azure-iot-sdk-csharp/blob/master/doc/setup_iothub.md) 
@@ -62,6 +62,19 @@ cmake -Drun_e2e_tests=ON -Drun_unittests=ON -DCMAKE_BUILD_TYPE=Debug ..
         - PrimaryKey: 5CiOHu2MJWVxHgPcue6dHaz91FF3410tnvzpUmjX4s4=
         - SecondaryKey: drTuxzMdQNA9tsw0wQmfCLKKaLaCxfMH0kFqh2yzbmc=
         - Device connection string: HostName=iotedgeexample.azure-devices.net;DeviceId=iot_edge_device_example;SharedAccessKey=5CiOHu2MJWVxHgPcue6dHaz91FF3410tnvzpUmjX4s4=
+
+### Change and compile the sample
+
+    - Edit the sample source code *azure-iot-sdk-c/iothub_service_client/samples/iothub_client_sample_amqp_shared.c* to have your device configuration:
+``` c
+static const char* hubName = "iotedgeexample";
+static const char* hubSuffix = "azure-devices.net";
+static const char* deviceId1 = "iot_edge_device_example";
+static const char* deviceId2 = "";
+static const char* deviceKey1 = "5CiOHu2MJWVxHgPcue6dHaz91FF3410tnvzpUmjX4s4=";
+static const char* deviceKey2 = "drTuxzMdQNA9tsw0wQmfCLKKaLaCxfMH0kFqh2yzbmc=";
+``` 
+    - Go to the *~/roger/third-party/iot_edge/azure-iot-sdk-c/cmake/iothub_client/samples/* and use `make` to compile your example. 
 
 ## How to compile
 
