@@ -1,8 +1,13 @@
-**/stage
-**/.vs
-**/build/** 
-!**/build/*.sh
-!**/build/*.bat
-!**/build/*.cmake
-!**/build/*.in
-!**/build/DockerFile
+
+tags
+style.css
+README.html
+src/**/.vs/
+src/**/bin/
+src/**/obj/
+src/**/properties/PublishProfiles/
+
+# Debug
+debug/
+!/debug/.env
+!/debug/docker-compose-linux.yaml
