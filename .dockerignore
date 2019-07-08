@@ -1,3 +1,10 @@
 
+# Debug
 debug/
-src/.vs/
+
+# Visual Studio 
+**/.vs/
+**/bin/
+**/obj/
+**/properties/PublishProfiles/
+

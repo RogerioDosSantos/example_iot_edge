@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "edge_module", "src\edge_module\edge_module.csproj", "{55C8EEE1-F3E2-41B7-8563-4ADAC3C6B570}"
+EndProject
+Project("{34036844-64E7-43A5-9151-4AD90E180989}") = "edge_config", "src\edge_config\edge_config.iotedgeproj", "{0D32A44A-699B-4A41-96C4-171D33AB8C8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55C8EEE1-F3E2-41B7-8563-4ADAC3C6B570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55C8EEE1-F3E2-41B7-8563-4ADAC3C6B570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55C8EEE1-F3E2-41B7-8563-4ADAC3C6B570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55C8EEE1-F3E2-41B7-8563-4ADAC3C6B570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D32A44A-699B-4A41-96C4-171D33AB8C8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D32A44A-699B-4A41-96C4-171D33AB8C8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D32A44A-699B-4A41-96C4-171D33AB8C8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D32A44A-699B-4A41-96C4-171D33AB8C8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {10AB7FAC-18C3-448B-B7C4-1AAA33621906}
+	EndGlobalSection
+EndGlobal

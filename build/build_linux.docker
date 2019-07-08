@@ -36,11 +36,16 @@ RUN echo "*** Compiling project" \
   && echo "*** Compiling project - DONE" 
 
 ## Release
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS release
+FROM microsoft/dotnet:2.2-runtime-stretch-slim
 WORKDIR /workspace
 
 ### Install Release 
 COPY --from=build /workspace/stage/release /workspace/bin
+
+### Add module user 
+RUN useradd -ms /bin/bash moduleuser
+USER moduleuser
+
 # EXPOSE 80
 # EXPOSE 443
 ENTRYPOINT ["dotnet", "/workspace/bin/edge_module.dll"]

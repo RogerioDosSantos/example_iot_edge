@@ -2,12 +2,16 @@
 tags
 style.css
 README.html
-src/**/.vs/
-src/**/bin/
-src/**/obj/
-src/**/properties/PublishProfiles/
 
 # Debug
 debug/
 !/debug/.env
 !/debug/docker-compose-linux.yaml
+!/debug/deployment.json
+
+# Visual Studio 
+**/*.user
+**/.vs/
+**/bin/
+**/obj/
+**/properties/PublishProfiles/
