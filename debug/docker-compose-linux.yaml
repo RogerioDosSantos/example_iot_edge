@@ -1,0 +1,38 @@
+# Build (Linux)
+
+## Environment Variables Used
+### branch: Git source branch. E.g.: dev
+### build_id: ID of the build. E.g.: 1234
+### proxy_url: URL of the proxy that should be used during the build. E.g.: http://gateway.zscaler.net:9480
+### registry: Docker registry. E.g.: iotedge.azurecr.io
+
+version: "3"
+services:
+
+  # stage:
+  #   build:
+  #     context: ../
+  #     dockerfile: ./build/stage_linux.docker
+  #   image: "edge_module_stage:linux"
+
+  build:
+    build:
+      context: ../
+      dockerfile: ./build/build_linux.docker
+      args:
+        proxy_url: "${proxy_url}"
+    image: "${registry}/edge_module:linux_${branch}_${build_id}"
+    # depends_on: 
+    #   - stage
+    entrypoint: /bin/bash
+    stdin_open: true
+    tty: true
+    # environment:
+    #   - ASPNETCORE_URLS="https://+443;http://+80"
+    #   - ASPNETCORE_HTTPS_PORT=443
+    #   - ASPNETCORE_Kestrel__Certificates__Default__Password=""
+    #   - ASPNETCORE_Kestrel__Certificates__Default__Path=""
+    # ports:
+    #   # - "443:80"
+    #   - "8080:80"
+

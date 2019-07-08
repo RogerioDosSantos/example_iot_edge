@@ -1,0 +1,10 @@
+
+# Debug
+debug/
+
+# Visual Studio 
+**/.vs/
+**/bin/
+**/obj/
+**/properties/PublishProfiles/
+
